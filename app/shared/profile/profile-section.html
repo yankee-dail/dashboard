@@ -1,0 +1,76 @@
+<div layout="row" layout-wrap layout-align="center stretch" flex>
+  <md-card class="profile-card user-card" flex ng-cloak flex-sm="100" flex-xs="100" flex-order-xs="2">
+    <md-card-title layout="column" layout-align="center center" flex>
+      <md-card-title-media layout="row">
+        <div class="md-media-lg card-media">
+          <img ng-src="../images/user.svg" alt="User"/>
+        </div>
+      </md-card-title-media>
+      <md-card-title-text layout="row">
+        <h3 class="md-title">{{ user.firstName }} {{ user.lastName }}</h3>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content layout="row" layout-align="center center">
+      <div layout="column" flex>
+        <div layout="row" layout-align="center stretch" layout-wrap flex>
+          <md-card flex flex-xs="100">
+            <md-card-content layout="column" layout-align="center center" flex>
+              <div class="md-title" layout="row" flex ng-if="user.projects > 0">{{ user.projects }}</div>
+              <div class="md-caption" layout="row" flex>
+                <ng-pluralize count="user.projects" when="{'0': 'no projects', '1': 'project', 'other': 'projects'}">
+                </ng-pluralize>
+              </div>
+            </md-card-content>
+          </md-card>
+          <md-card flex flex-xs="100">
+            <md-card-content layout="column" layout-align="center center" flex>
+              <div class="md-title" layout="row" flex ng-if="user.services > 0">{{ user.services }}</div>
+              <div class="md-caption" layout="row" flex>
+                <ng-pluralize count="user.services" when="{'0': 'no services', '1': 'service', 'other': 'services'}">
+                </ng-pluralize>
+              </div>
+            </md-card-content>
+          </md-card>
+          <md-card flex flex-xs="100">
+            <md-card-content layout="column" layout-align="center center" flex>
+              <div class="md-title" layout="row" flex ng-if="user.releases > 0">{{ user.releases }}</div>
+              <div class="md-caption" layout="row" flex>
+                <ng-pluralize count="user.releases" when="{'0': 'no releases', '1': 'release', 'other': 'releases'}">
+                </ng-pluralize>
+              </div>
+            </md-card-content>
+          </md-card>
+        </div>
+      </div>
+    </md-card-content>
+  </md-card>
+  <md-card class="profile-card" flex ng-cloak flex-sm="100" flex-xs="100" flex-order-xs="1">
+    <md-content ng-controller="ProfileTabsController as tabs">
+      <md-tabs md-selected="tabs.selectedIndex" md-dynamic-height md-border-bottom class="profile-tabs">
+        <md-tab label="Personal Info">
+          <md-content class="md-padding">
+            <spinner ng-if="isUserLoading"></spinner>
+            <div personal-info-tab></div>
+          </md-content>
+        </md-tab>
+        <md-tab label="Password">
+          <md-content class="md-padding">
+            <spinner ng-if="isPassLoading"></spinner>
+            <div change-password-tab></div>
+          </md-content>
+        </md-tab>
+        <md-tab label="Activities" ng-disabled="true">
+          <md-content class="md-padding">
+            <div activities-tab></div>
+          </md-content>
+        </md-tab>
+        <md-tab label="Themes">
+          <md-content class="md-padding">
+            <spinner ng-if="isThemesLoading"></spinner>
+            <div themes-tab></div>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+  </md-card>
+</div>

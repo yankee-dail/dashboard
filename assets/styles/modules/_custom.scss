@@ -1,0 +1,118 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+md-input-container.md-default-theme label, md-input-container label,
+md-input-container.md-default-theme .md-placeholder, md-input-container .md-placeholder {
+  color: rgba(61, 61, 61, 0.8);
+}
+
+.md-button {
+  text-transform: none;
+  vertical-align: middle;
+}
+
+md-toolbar {
+  md-card {
+    color: $grey-c;
+  }
+}
+
+.show-success {
+  display: flex !important;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.material-icons.s48 {
+  width: 48px;
+  height: 48px;
+}
+
+main {
+  min-height: calc(100vh - 168px);
+}
+
+.full-screen {
+  min-height: calc(100vh - 80px);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.md-tab {
+  text-transform: capitalize;
+}
+
+md-backdrop, md-sidenav {
+  position: fixed;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+md-input-container textarea.md-input {
+  overflow: auto;
+  min-height: 30px;
+}
+
+md-card {
+  z-index: 10;
+}
+
+/* Spinner */
+spinner {
+  display: flex;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 999;
+  overflow: hidden;
+}
+
+md-progress-circular {
+  margin: auto !important;
+}
+
+@media (max-width: 960px) {
+  main {
+    min-height: calc(100vh - 116px);
+  }
+  .full-screen {
+    min-height: calc(100vh - 48px);
+  }
+}
+
+@media only screen and (max-width: 959px) and (min-width: 0) and (orientation: portrait) {
+  main {
+    min-height: calc(100vh - 124px);
+  }
+  .full-screen {
+    min-height: calc(100vh - 56px);
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    min-height: calc(100vh - 164px);
+  }
+  .md-headline {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+  .md-subhead {
+    text-align: center;
+  }
+}
+
+md-backdrop.md-sidenav-backdrop-custom {
+  background-color: transparent !important;
+}
+
+md-backdrop.disabled {
+  display: none;
+}

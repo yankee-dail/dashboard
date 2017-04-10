@@ -1,0 +1,20 @@
+<md-card class="pie-chart" flex>
+  <div class="text-color-custom custom-border" layout="row">
+    <md-input-container class="md-block custom-input" ng-class="{'display-none-custom' : showDropdown}">
+      <md-select ng-model='showActivities' placeholder="{{activitiesValuePie}}">
+        <md-option ng-repeat="trendKeysPie in trendKeysPie" value='{{trendKeysPie}}' ng-click="changeActivitiesPie(trendKeysPie)">{{trendKeysPie}}</md-option>
+      </md-select>
+    </md-input-container>
+    <div>
+      <md-button class="btn-custom" ng-class="{'md-raised' : activeBackBtnFirstStepPieChart}" ng-click="breadCrumbsPieChart(1)" ng-disabled="!activeBackBtnFirstStepPieChart">Activities</md-button>
+      <md-icon class="trend-icon bread-crumbs btn-custom" md-svg-icon="arrow-right" ng-class="{'display-none-custom' : !activeBackBtnFirstStepPieChart}"></div>
+    <div>
+      <md-button class="btn-custom" ng-click="breadCrumbsPieChart(2)" ng-disabled="!backBtnSecondStepPieChart[0]" ng-class="{'display-none-custom' : !backBtnSecondStepPieChart[1], 'md-raised' : activeBackBtnThirdStepPieChart}">Components</md-button>
+      <md-icon class="trend-icon bread-crumbs btn-custom" md-svg-icon="arrow-right" ng-class="{'display-none-custom' : !backBtnSecondStepPieChart[0]}">
+    </div>
+    <md-button class="btn-custom" ng-class="{'display-none-custom' : !activeBackBtnThirdStepPieChart}" disabled>Environment</md-button>
+  </div>
+  <div>
+    <div id="spectrum" style=""></div>
+  </div>
+</md-card>

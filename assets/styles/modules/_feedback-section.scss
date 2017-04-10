@@ -1,0 +1,21 @@
+.custom-fab {
+  position: fixed;
+  right: 0;
+  bottom: 15%;
+}
+
+.feedback-dialog {
+  max-height: 500px;
+  min-width: 550px;
+  position: fixed;
+  bottom: 5%;
+  right: 10px;
+}
+
+@media (max-width: 600px) {
+  .feedback-dialog {
+    position: relative;
+    bottom: 0;
+    right: 0;
+  }
+}

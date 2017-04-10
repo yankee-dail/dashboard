@@ -1,0 +1,27 @@
+.profile-card {
+  max-width: 600px;
+
+  &.user-card {
+    max-width: 400px;
+  }
+}
+.themes-radio-group {
+  md-radio-button {
+    margin-bottom: 0;
+    max-width: 200px;
+
+    .md-label {
+      margin-left: 15px;
+    }
+  }
+}
+.profile-tabs {
+  spinner {
+    z-index: 19;
+  }
+}
+@media (max-width: 959px) {
+  .profile-card.user-card {
+    max-width: 100%;
+  }
+}

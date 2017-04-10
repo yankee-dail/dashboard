@@ -1,0 +1,53 @@
+<landing-header></landing-header>
+
+<main layout="row" flex ng-cloak>
+  <!-- Hero section -->
+  <div class="hero-background" layout="column" layout-align="center center" layout-padding flex>
+    <canvas-trianglify></canvas-trianglify>
+    <md-card ng-controller="SignInController" class="login">
+      <spinner ng-if="isLoading"></spinner>
+      <md-card-title>
+        <md-card-title-text layout-align="center center">
+          <h1 class="md-headline">Sign In</h1>
+          <p class="error md-subheader md-warn">{{error}}</p>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <form name="loginForm" ng-submit="submitLoginForm()">
+          <md-input-container class="md-block" flex>
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" required type="email" name="username" ng-model="data.username"
+                   ng-pattern="/^.+@.+\..+$/" maxlength="100"/>
+            <div ng-messages="loginForm.username.$error" role="alert" ng-show="loginForm.username.$touched">
+              <div ng-message-exp="'required'">Email is required</div>
+              <div ng-message-exp="'maxlength'">Email should not have more than 100 symbols</div>
+              <div ng-message-exp="'pattern'">Incorrect email format</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block" flex>
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" required type="password" name="password" ng-model="data.password"
+                   ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/" maxlength="40" minlength="8"/>
+            <div ng-messages="loginForm.password.$error" role="alert" ng-show="loginForm.password.$touched">
+              <div ng-message-exp="'required'">Password is required</div>
+              <div ng-message-exp="'minlength'">Password should have at least 8 symbols</div>
+              <div ng-message-exp="'maxlength'">Password should not have more than 40 symbols</div>
+              <div ng-message-exp="'pattern'">Password should contain at least 1 uppercase alphabet, 1 lowercase
+                alphabet and 1 number
+              </div>
+            </div>
+          </md-input-container>
+          <div layout="row" layout-align="center center">
+            <md-button type="submit" class="md-raised md-primary">Sign In</md-button>
+          </div>
+        </form>
+      </md-card-content>
+      <md-card-actions layout="row" layout-align="space-between center">
+        <md-button class="md-primary" href="/forgot-pass">Forgot Your Password?</md-button>
+        <md-button class="md-primary" ng-click="showSignUp($event)">Sign Up Now</md-button>
+      </md-card-actions>
+    </md-card>
+  </div>
+</main>
+
+<landing-footer></landing-footer>

@@ -1,0 +1,42 @@
+<md-card-content>
+  <form name="userProfileForm" ng-submit="submitUserForm()">
+    <md-input-container class="md-block" flex>
+      <label for="infoFirstName">First Name</label>
+      <input id="infoFirstName" required type="text" name="firstName" ng-model="personalInfo.firstName"
+             ng-pattern="/^[A-Za-z]+$/" maxlength="50"/>
+      <div ng-messages="userProfileForm.firstName.$error" role="alert" ng-show="userProfileForm.firstName.$touched">
+        <div ng-message-exp="'required'">First Name is required</div>
+        <div ng-message-exp="'maxlength'">First Name should not have more than 50 symbols</div>
+        <div ng-message-exp="'pattern'">Please use only letters</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-block" flex>
+      <label for="infoLastName">Last Name</label>
+      <input id="infoLastName" required type="text" name="lastName" ng-model="personalInfo.lastName"
+             ng-pattern="/^[A-Za-z]+$/" maxlength="50"/>
+      <div ng-messages="userProfileForm.lastName.$error" role="alert" ng-show="userProfileForm.lastName.$touched">
+        <div ng-message-exp="'required'">Last Name is required</div>
+        <div ng-message-exp="'maxlength'">Last Name should not have more than 50 symbols</div>
+        <div ng-message-exp="'pattern'">Please use only letters</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-block no-margin-bottom" flex>
+      <label for="infoEmail">Email</label>
+      <input id="infoEmail" required type="email" name="email" ng-model="personalInfo.email"
+             ng-pattern="/^.+@.+\..+$/" maxlength="100"/>
+      <div ng-messages="userProfileForm.email.$error" role="alert" ng-show="userProfileForm.email.$touched">
+        <div ng-message-exp="'required'">Email is required</div>
+        <div ng-message-exp="'maxlength'">Email should not have more than 100 symbols</div>
+        <div ng-message-exp="'pattern'">Incorrect email format</div>
+      </div>
+    </md-input-container>
+    <div layout="row" layout-padding layout-align="center center">
+      <span class="message" ng-class="{ 'success': personalInfo.msg.success, 'error': personalInfo.msg.error }">
+        {{ personalInfo.msg.message }}
+      </span>
+    </div>
+    <div layout="row" layout-align="center center">
+      <md-button type="submit" class="md-raised md-primary">Update</md-button>
+    </div>
+  </form>
+</md-card-content>

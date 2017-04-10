@@ -1,0 +1,105 @@
+.login {
+  min-width: 561px;
+
+  md-card-title {
+    padding: 10px 0 0;
+  }
+
+  md-card-content {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .login {
+    min-width: 100%;
+  }
+}
+
+//.login {
+//  background-image: url("../images/background.jpg"), none;
+//  min-height: 80vh;
+//  background-size: cover;
+//
+//  .login-card {
+//    margin: 10% auto;
+//    display: table;
+//    max-width: 380px;
+//    width: 100%;
+//  }
+//
+//  .login-btn {
+//    margin: 16px auto;
+//    width: 100%;
+//    background: $blue-curacao;
+//    color: #fff;
+//    font-size: 18px;
+//  }
+//
+//  .login-form {
+//    margin: 20px 0 28px;
+//
+//    p {
+//      font-size: 30px;
+//      text-align: center;
+//      margin-bottom: 10px;
+//      margin-top: 0;
+//    }
+//
+//    a {
+//      position: relative;
+//      text-decoration: underline;
+//      color: $light-grey-c;
+//      padding-top: 10px;
+//    }
+//  }
+//
+//  .content.paper-button {
+//    padding: 0.9em 0.57em;
+//  }
+//
+//  .msg-cont {
+//    width: 100%;
+//    text-align: center;
+//
+//    p {
+//      font-size: 16px;
+//      color: #fff;
+//      margin-top: 10px;
+//      margin-bottom: 0;
+//      padding: 14px 0;
+//
+//      a {
+//        font-size: 16px;
+//        color: #fff;
+//        display: inline-block;
+//      }
+//    }
+//
+//    .error {
+//      color: $error-color;
+//    }
+//
+//    .success {
+//      color: $success-color;
+//    }
+//  }
+//}
+//
+//paper-card .card-content {
+//  padding: 35px;
+//  position: relative;
+//}
+
+.error {
+  color: $error-color;
+}
+.success {
+  color: $success-color !important;
+}
+md-card-title-text{
+  .success{
+    text-align: center;
+  }
+}
+

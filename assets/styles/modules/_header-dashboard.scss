@@ -1,0 +1,290 @@
+#header-dashboard{
+  border-bottom: 1px solid $lavender;
+  paper-header-panel{
+    height: 60px;
+    width: 100%;
+    color: $grey-c;
+    .paper-header{
+      height: 100%;
+      p{
+        margin: 16px 0;
+        .breadcrumbsNav {
+          left: 35px;
+          position: relative;
+          font-size: 20px;
+          font-weight: 600;
+          margin-top: 20px;
+          margin-bottom: 0;
+        }
+      }
+    }
+    .content.specific{
+      text-align: right;
+    }
+    .content{
+      margin-top: 10px;
+      .profile-icon, .user-name{
+        right: 75px;
+        position: relative;
+        cursor: pointer;
+      }
+      .notif-count{
+        padding: 2px 5px;
+        font-size: 11px;
+        background: red;
+        border-radius: 50%;
+        right: 34px;
+        z-index: 99;
+        color: #fff;
+        position: relative;
+        bottom: 11px;
+      }
+    }
+  }
+}
+.dropdown-menu-cust{
+  float: right;
+  right: 75px;
+  width: 102px;
+  z-index: 99;
+  color: #fff;
+}
+paper-material.content.style-scope.paper-button{
+  text-align: center;
+}
+.profile-icon.notif{
+  margin-right: 15px;
+}
+.menu-styles{
+  border: 1px solid grey;
+  max-width: 150px;
+  position: relative;
+}
+.dropdown-menu-cust.hide-el{
+  display: none;
+}
+
+#sidebar-menu{
+  height: 100vh;
+  paper-card{
+    height: 100%;
+    width: 100%;
+    paper-material{
+      background-color: $blue-curacao;
+      color: #fff;
+      height: 100%;
+    }
+  }
+}
+.sidebar-menu-card{
+  background: $light-grey-c;
+}
+iron-icon.huge {
+  width: 50px;
+  height: 50px;
+}
+paper-icon-button.profile-icon.specific, .other-proj,
+paper-icon-button.more-icon.specific{
+  width: 40px;
+  height: 40px;
+}
+.more-icon{
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+paper-icon-button.project-img iron-icon, paper-icon-button.profile-icon.specific iron-icon,
+.more-icon iron-icon{
+  width: 100%;
+  height: 100%;
+}
+.project-img{
+  padding-left: 0;
+}
+.proj-name{
+  font-size: 20px;
+  margin-top: 0;
+  margin-left: 10px;
+}
+.project-logo{
+  top: 7px;
+  position: relative;
+  border-bottom: 1px solid $lavender;
+}
+.project-list{
+  margin-top: 7px;
+  font-size: 16px;
+  background: $lavender;
+}
+.other-proj{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.content.drop-down{
+  position: relative;
+}
+paper-button.choose-proj paper-material.content{
+  background: $lavender !important;
+}
+#collapse3 .content.drop-down{
+  padding-top: 0;
+}
+#collapse3{
+  margin-top: 0;
+}
+paper-button.more-el paper-material.content{
+  background: $grey-c !important;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.more-el{
+  margin-bottom: 20px;
+}
+.more-el .content{
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.menu-el .project-img{
+  margin-left: 30px;
+}
+.menu-el{
+  width: 100%;
+  margin: 0;
+  paper-material{
+    padding: 0;
+    text-align: left;
+  }
+  .vendor-btn{
+    paper-material{
+      text-align: left !important;
+    }
+  }
+}
+.releases .content{
+  padding-left: 27px;
+}
+ul.dropdown-menu.polymer-drop{
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) !important;
+  border: none;
+  border-radius: 0;
+  color: $grey-c;
+  padding: 15px;
+  background: #fff !important;
+  position: absolute !important;
+  li.profile-si{
+    a{
+      margin-top: 5px;
+      border-top: 1px solid $grey-c;
+      padding-top: 10px;
+      padding-left: 20px;
+    }
+  }
+}
+.menu-el.first{
+  margin-top: 25px;
+}
+@media(max-width: 991px){
+  iron-icon.huge {
+    width: 30px;
+    height: 30px;
+  }
+  .proj-name{
+    font-size: 16px;
+    top: 4px;
+    position: relative;
+  }
+  .project-logo {
+    padding-bottom: 10px;
+    padding-top: 13px;
+  }
+  .menu-el .project-img {
+    margin-left: 15px;
+  }
+  .releases .content {
+    padding-left: 15px;
+  }
+  .releases-date {
+    font-size: 12px;
+  }
+  .releases-date iron-icon {
+    bottom: 4px;
+  }
+}
+.choose-proj{
+  padding: 20px 30px 20px 40px;
+  cursor: pointer;
+  span{
+    padding-left: 20px;
+  }
+}
+.choose-proj.active{
+  background: $peapod;
+}
+.vendor-btn{
+  margin: 0;
+  width: 100%;
+}
+.more-icon{
+  &[aria-expanded="false"]{
+    transform: rotate(0deg);
+  }
+  &[aria-expanded="true"]{
+    transform: rotate(90deg);
+  }
+}
+.release-history{
+  margin: 0 11px 0 40px;
+  position: relative;
+  top: 20px;
+  .release-header{
+    background-color: $peapod;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px 10px 0 0;
+    font-size: 20px;
+    span{
+      color: #fff;
+      vertical-align: middle;
+      position: relative;
+      top: 4px;
+      left: 25px;
+    }
+  }
+  .release-body{
+    background-color: $lavender;
+    color: #fff;
+    width: 100%;
+    height: 200px;
+    font-size: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    .release-el{
+      cursor: pointer;
+      :hover{
+        background: $light-grey-c;
+      }
+      .active{
+        background: $light-grey-c;
+      }
+      .release-data{
+        padding: 10px 0 10px 25px;
+        span{
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
+.profile-icon.specific{
+  color: #fff;
+}
+.dropdown-toggle.user-name{
+  color: #fff;
+}
+.no-release-mess{
+  font-size: 18px;
+  text-align: center;
+  margin-top: 60px;
+  color: $error-text;
+}

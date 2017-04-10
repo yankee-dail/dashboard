@@ -1,0 +1,196 @@
+.client-menu {
+  padding: 0;
+
+  md-list-item {
+    padding: 6px 0;
+
+    .md-avatar {
+      width: inherit;
+      height: 40px;
+      max-width: 90px;
+      margin-top: 5px;
+      margin-bottom: 7px;
+      border-radius: 0;
+    }
+    md-icon {
+      margin-right: 10px !important;
+      transition: transform .3s ease-in-out;
+      -webkit-transition: -webkit-transform .3s ease-in-out;
+      &.toggle {
+        transform: rotateZ(180deg);
+        -webkit-transform: rotateZ(180deg);
+      }
+    }
+  }
+}
+
+.projects-submenu {
+  padding: 0;
+  max-height: 700px;
+  -webkit-transition: max-height 0.5s ease-in;
+  transition: max-height 0.5s ease-in;
+  overflow: hidden;
+
+  .md-button {
+    border-radius: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  &.ng-hide {
+    max-height: 0;
+    -webkit-transition: max-height 0.3s ease-in;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+  }
+  md-list-item {
+    padding-left: 50px;
+  }
+}
+
+.releases {
+  .md-title {
+    padding-left: 18px;
+  }
+  md-list-item > md-icon:first-child {
+    margin-right: 20px;
+    margin-top: 4px;
+    margin-bottom: 6px;
+  }
+}
+
+.trends-card{
+  padding: 15px;
+  min-width: 360px;
+  .activities-content{
+    margin: auto;
+    .trend-icon{
+      height: 20px;
+      width: 20px;
+    }
+    .trend-element{
+      text-align: right;
+      .md-button.md-raised{
+        background-color: #fff;
+      }
+      button{
+        margin-bottom: 10px;
+        margin-top: 0;
+      }
+    }
+  }
+  .main-content{
+    padding-top: 5px;
+    padding-left: 14px;
+    .main-name{
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .count-all{
+      margin-top: 5px;
+      .count-all-trend{
+        font-weight: bold;
+      }
+    }
+    .release-date{
+      margin-top: 20px;
+      font-size: 14px;
+      .last-release, .previous-release{
+        font-weight: bold;
+      }
+    }
+  }
+}
+.trend-number{
+  font-weight: bold;
+}
+.custom-red{
+  color: $error-color !important;
+}
+.custom-green{
+  color: $success-color !important;
+}
+.display-none-custom{
+  display: none !important;
+}
+.text-decoration-cust{
+  text-decoration: underline;
+}
+.text-color-custom{
+  a.md-button[disabled],.md-button[disabled]{
+    color: rgba(0, 0, 0, 0.87) !important;
+  }
+}
+.custom-border{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.87);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  .custom-input{
+    margin: 0 0 15px 0;
+  }
+}
+.trend-icon.bread-crumbs{
+  margin-right: 4px;
+  height: 20px;
+  width: 20px;
+}
+.btn-custom{
+  margin: 0;
+}
+.activities-btn{
+  width: 95%;
+}
+.pie-chart{
+  padding: 15px;
+}
+@media (max-width: 400px) {
+  .trends-card {
+    min-width: 280px;
+    margin: 0;
+  }
+  .custom-display{
+    display: block !important;
+  }
+  .main-content {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .release-date{
+    margin-top: 15px;
+  }
+}
+.dashboard-line-chart{
+  padding: 20px 0;
+  .line-chart{
+    padding: 20px;
+  }
+}
+.line-chart-input-block{
+  display: table;
+  margin: 20px auto;
+  .line-chart-dropdown{
+    margin: 0 20px;
+  }
+  .active-type{
+    display: table-cell;
+  }
+}
+.releases-title{
+  margin: 20px auto 0;
+  display: table;
+  span{
+    margin: 0 10px;
+  }
+}
+.chart-elemnt{
+  box-sizing: initial;
+  .chart-title{
+    text-align: center;
+    font-size: 20px;
+    padding-top: 20px;
+  }
+}
+.highcharts-container{
+  max-width: 370px;
+}

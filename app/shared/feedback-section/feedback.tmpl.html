@@ -1,0 +1,78 @@
+<md-dialog class="feedback-dialog" aria-label="Feedback Section" ng-cloak flex-sm="80" flex="50" md-theme="{{theme}}"
+           md-theme-watch>
+  <spinner ng-if="isLoading"></spinner>
+  <form name="feedbackForm" ng-submit="sendFeedback()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>I have feedback about:</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-icon="close" aria-label="Close dialog" alt="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-input-container class="md-block">
+          <md-checkbox layout="row" ng-model="data.cb1" aria-label="Content" ng-true-value="'Content'">Content
+          </md-checkbox>
+          <md-checkbox layout="row" ng-model="data.cb2" aria-label="Visual Design"
+                       ng-true-value="'Visual Design'">Visual Design
+          </md-checkbox>
+          <md-checkbox layout="row" ng-model="data.cb3" aria-label="Usability" ng-true-value="'Usability'">Usability
+          </md-checkbox>
+          <md-checkbox layout="row" ng-model="data.cb4" aria-label="Other" ng-true-value="'Other'">Other
+          </md-checkbox>
+        </md-input-container>
+        <md-input-container class="md-block" flex>
+          <label for="feedbackEmail">Email *</label>
+          <input id="feedbackEmail" required type="email" name="email" ng-model="data.email"
+                 ng-pattern="/^.+@.+\..+$/" maxlength="100" minlength="10"/>
+          <div ng-messages="feedbackForm.email.$error" role="alert" ng-show="feedbackForm.email.$touched">
+            <div ng-message-exp="'required'">Email is required</div>
+            <div ng-message-exp="'minlength'">Email should have at least 10 symbols</div>
+            <div ng-message-exp="'maxlength'">Email should not have more than 100 symbols</div>
+            <div ng-message-exp="'pattern'">Incorrect email format</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex>
+          <label for="feedbackFirstName">First Name *</label>
+          <input id="feedbackFirstName" required type="text" name="firstName" ng-model="data.firstName"
+                 ng-pattern="/^[A-Za-z]+$/" maxlength="40"/>
+          <div ng-messages="feedbackForm.firstName.$error" role="alert" ng-show="feedbackForm.firstName.$touched">
+            <div ng-message-exp="'required'">First name is required</div>
+            <div ng-message-exp="'maxlength'">First name should not have more than 40 symbols</div>
+            <div ng-message-exp="'pattern'">First name should contain only letters</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex>
+          <label for="feedbackLastName">Last Name *</label>
+          <input id="feedbackLastName" required type="text" name="lastName" ng-model="data.lastName"
+                 ng-pattern="/^[A-Za-z]+$/" maxlength="40"/>
+          <div ng-messages="feedbackForm.lastName.$error" role="alert" ng-show="feedbackForm.lastName.$touched">
+            <div ng-message-exp="'required'">Last name is required</div>
+            <div ng-message-exp="'maxlength'">Last name should not have more than 40 symbols</div>
+            <div ng-message-exp="'pattern'">Last name should contain only letters</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex>
+          <label for="feedbackComments">Comments *</label>
+          <textarea required id="feedbackComments" name="comments" ng-model="data.comments" md-maxlength="150"
+                    rows="5" maxlength="150"></textarea>
+          <div ng-messages="feedbackForm.comments.$error" role="alert" ng-show="feedbackForm.comments.$touched">
+            <div ng-message-exp="'required'">Comments area is required</div>
+            <div ng-message-exp="'maxlength'">Comments should not have more than 150 symbols</div>
+          </div>
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row" layout-align="center center">
+      <md-button ng-click="cancel()" class="md-primary md-raised">
+        Cancel
+      </md-button>
+      <md-button class="md-primary md-raised" type="submit">
+        Send
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

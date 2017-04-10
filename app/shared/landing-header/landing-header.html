@@ -1,0 +1,92 @@
+<header>
+  <md-backdrop class="md-sidenav-backdrop md-opaque md-default-theme md-sidenav-backdrop-custom disabled" ng-click="checkClosingForm()"></md-backdrop>
+  <md-toolbar class="header" layout="row" layout-align="space-between center" hide-xs hide-sm>
+    <md-button class="logo" ng-href="/" title="RS Customer Portal" aria-label="RS Customer Portal">
+      <img ng-src="../images/logo.svg" alt="RS Customer Portal Logo"/>
+    </md-button>
+    <span flex></span>
+    <md-button ng-href="{{ signInUrl }}" ng-if="!user.loggedIn && !signInLocation">Sign In</md-button>
+    <md-button ng-click="showSignUp($event)" ng-if="!user.loggedIn && signInLocation">Sign Up</md-button>
+    <md-menu ng-if="user.loggedIn">
+      <md-button aria-label="Open user menu" ng-click="openMenu($mdOpenMenu, $event)">
+        <md-icon md-menu-origin md-svg-icon="account-box" class="material-icons s48"></md-icon>
+        <md-tooltip>
+          {{ user.info.first_name }} {{ user.info.last_name }}
+        </md-tooltip>
+        {{ user.info.first_name }} {{ user.info.last_name }}
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button ng-href="{{ profileUrl }}">
+            <md-icon md-svg-icon="clipboard-account"></md-icon>
+            Profile
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-href="{{ servicesUrl }}">
+            <md-icon md-svg-icon="apps"></md-icon>
+            Services
+          </md-button>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item>
+          <md-button disabled="disabled">
+            <md-icon md-svg-icon="bell"></md-icon>
+            Notifications
+          </md-button>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item>
+          <md-button ng-click="signOut()">
+            <md-icon md-svg-icon="logout"></md-icon>
+            Sign Out
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </md-toolbar>
+  <md-toolbar class="header" layout="row" layout-align="space-between center" hide-gt-sm>
+    <span flex></span>
+    <md-button ng-click="toggleUserMenu()">
+      <md-icon md-svg-icon="account-box" aria-label="User Menu" title="User Menu"></md-icon>
+    </md-button>
+  </md-toolbar>
+  <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')"
+              hide-gt-sm>
+    <md-toolbar>
+      <md-button class="logo" href="/" title="RS Customer Portal" aria-label="RS Customer Portal">
+        <img ng-src="../images/logo.svg" alt="RS Customer Portal Logo"/>
+      </md-button>
+    </md-toolbar>
+    <md-content layout-padding layout-align="center center" ng-if="!user.loggedIn">
+      <md-button ng-href="{{ signInUrl }}">
+        <md-icon md-svg-icon="login" alt="Sign In"></md-icon>
+        Sign In
+      </md-button>
+    </md-content>
+    <md-content layout="column" layout-padding layout-align="center center" ng-if="user.loggedIn">
+      <img class="user-img" src="../images/user.svg" alt="User" title="User" />
+      <md-button>
+        {{ user.info.first_name }} {{ user.info.last_name }}
+      </md-button>
+    </md-content>
+    <md-content layout="column" layout-padding layout-align="start start" ng-if="user.loggedIn">
+      <md-button ng-href="{{ profileUrl }}">
+        <md-icon md-svg-icon="clipboard-account" alt="Profile"></md-icon>
+        Profile
+      </md-button>
+      <md-button ng-href="{{ servicesUrl }}">
+        <md-icon md-svg-icon="apps"></md-icon>
+        Services
+      </md-button>
+      <md-button disabled="disabled">
+        <md-icon md-svg-icon="bell"></md-icon>
+        Notifications
+      </md-button>
+      <md-button ng-click="signOut()">
+        <md-icon md-svg-icon="logout"></md-icon>
+        Sign Out
+      </md-button>
+    </md-content>
+  </md-sidenav>
+</header>

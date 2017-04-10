@@ -1,0 +1,35 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="dashboardSidebar"
+            md-is-locked-open="$mdMedia('gt-sm')" ng-cloak flex>
+  <md-toolbar class="md-hue-1" ng-cloak>
+    <md-list class="client-menu">
+      <md-list-item md-ink-ripple ng-click="toggleMenu()">
+        <img ng-src="{{ vendor.logo }}" class="md-avatar" alt="{{ vendor.vendor_description }}"
+             title="{{ vendor.vendor_description }}"/>
+        {{ vendor.vendor_name }}
+        <md-icon aria-label="Toggle" md-svg-icon="arrow-up" ng-class="{ toggle: isCollapsed }"></md-icon>
+      </md-list-item>
+    </md-list>
+  </md-toolbar>
+  <md-list class="projects-submenu" ng-show="isCollapsed">
+    <md-button layout="row" class="md-primary md-raised" ng-disabled="project.status__name === 'On Hold'"
+               ng-if="project.status__name !== 'Closed'" ng-repeat="project in projects"
+               ng-class="{'md-hue-2': project.status__name === 'Open' && project.name !== currentProject.name,
+                          'md-accent': project.name === currentProject.name}" ng-click="chooseProject(project)">
+      <md-list-item md-ink-ripple>{{project.name}}</md-list-item>
+    </md-button>
+  </md-list>
+  <md-content layout-padding flex role="navigation" ng-if="releases">
+    <md-list class="releases" layout="column" flex>
+      <h1 class="md-title">Releases History</h1>
+      <md-button layout="row" ng-repeat="release in releases"
+                 ng-class="{ 'md-accent': release.id === currentRelease.release.id }" ng-click="chooseRelease(release)">
+        <md-list-item md-ink-ripple>
+          <md-icon aria-label="Release" md-svg-icon="briefcase-upload"></md-icon>
+          <p>{{ release.end_date }}</p>
+          <p class="text-center">{{ release.name }}</p>
+          <md-icon aria-label="View Release" md-svg-icon="arrow-right"></md-icon>
+        </md-list-item>
+      </md-button>
+    </md-list>
+  </md-content>
+</md-sidenav>

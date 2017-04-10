@@ -1,0 +1,91 @@
+<!doctype html>
+<html ng-app="uiQaninjasApp">
+<head>
+  <meta charset="utf-8">
+  <base href="/index.html">
+  <title ng-bind='page.title'></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body>
+
+<div ng-view ng-controller="ThemeController" md-theme="{{theme}}" md-theme-watch></div>
+
+<!-- Feedback section -->
+<div data-feedback-section ng-controller="ThemeController" md-theme="{{theme}}" md-theme-watch></div>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/trianglify/dist/trianglify.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="libs/jsapi.js"></script>
+<script src="app.module.js"></script>
+<script src="app.routes.js"></script>
+<script src="app.constants.js"></script>
+<script src="app.factories.js"></script>
+<script src="components/landing/landingController.js"></script>
+<script src="components/services/servicesController.js"></script>
+<script src="components/services/servicesFactory.js"></script>
+<script src="shared/dashboard/dashboardTrendsService.js"></script>
+<script src="shared/dashboard-trends/dashboard-trends.js"></script>
+<script src="shared/dashboard-pie-chart/dashboard-pie-chart.js"></script>
+<script src="shared/dashboard-line-chart/dashboard-line-chart.js"></script>
+
+<script src="shared/dashboard/dashboardController.js"></script>
+<script src="shared/sidebar-menu/sidebar-menu.js"></script>
+<script src="shared/sidebar-menu/sidebarMenuController.js"></script>
+<script src="shared/profile/profileSection.js"></script>
+<script src="shared/profile/personalInfoTab.js"></script>
+<script src="shared/profile/profileController.js"></script>
+<script src="shared/profile/changePasswordTab.js"></script>
+<script src="shared/profile/activitiesTab.js"></script>
+<script src="shared/profile/themesTab.js"></script>
+<script src="shared/dashboard/dashboardCharts.js"></script>
+<script src="shared/landing-header/landing-header.js"></script>
+<script src="shared/landing-header/landingHeaderController.js"></script>
+<script src="shared/landing-footer/landing-footer.js"></script>
+<script src="shared/landing-footer/landingFooterController.js"></script>
+<script src="shared/scroll-on-click/scroll-on-click.js"></script>
+<script src="shared/feedback-section/feedback-section.js"></script>
+<script src="shared/feedback-section/feedbackSectionController.js"></script>
+<script src="components/sign-in/signInController.js"></script>
+<script src="components/forgot-pass/forgotPasswordController.js"></script>
+<script src="components/reset-pass/resetPasswordService.js"></script>
+<script src="components/reset-pass/resetPasswordController.js"></script>
+<script src="shared/get-in-touch/getInTouchController.js"></script>
+<script src="shared/get-in-touch/getInTouch.js"></script>
+<script src="shared/spinner/spinner.js"></script>
+<script src="shared/spinner/spinnerController.js"></script>
+<script src="shared/user-data/userDataService.js"></script>
+<script src="shared/sidebar-menu/sidebarMenuService.js"></script>
+<script src="shared/compare-to/compare-to-directive.js"></script>
+<!-- endbuild -->
+</body>
+</html>

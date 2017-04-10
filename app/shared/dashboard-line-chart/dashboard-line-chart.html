@@ -1,0 +1,14 @@
+<md-card class="line-chart" flex layout="column">
+  <div id="line-chart" layout="row" ></div>
+  <div class="releases-title" ng-class="{'display-none-custom' : !dropdownShowLineChart}">
+    <span>Activities Type: <b>{{placeholderValue}}</b></span>
+  </div>
+  <div class="line-chart-input-block" ng-class="{'display-none-custom' : dropdownShowLineChart}">
+    <span class="active-type">Activities Type: </span>
+    <md-input-container class="md-block line-chart-dropdown">
+      <md-select ng-model='showActivities' placeholder="{{activitiesValue}}">
+        <md-option ng-repeat="componentsKeysValue in componentsKeysValue" value='{{componentsKeysValue}}' ng-click="activitiesChangeValue(componentsKeysValue)">{{componentsKeysValue}}</md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+</md-card>

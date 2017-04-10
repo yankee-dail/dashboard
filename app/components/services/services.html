@@ -1,0 +1,32 @@
+<spinner ng-if="isLoading" full-screen="true"></spinner>
+<landing-header></landing-header>
+
+<main layout="row" flex ng-cloak>
+  <!-- Hero section -->
+  <div class="hero-background" layout-padding layout="column" flex>
+    <canvas-trianglify></canvas-trianglify>
+    <div class="service-section" layout-padding layout-wrap layout="row" layout-align="center center" flex>
+      <md-card class="service" ng-repeat="service in services"
+               ng-class="{'md-card-disabled' : !service.user_has_service}">
+        <md-card-title layout="column">
+          <md-card-title-media layout="column" layout-align="center center">
+            <div class="md-media-lg card-media">
+              <img class="md-card-image" ng-src="{{service.img_base64_path}}" alt="{{ service.name }}"/>
+            </div>
+          </md-card-title-media>
+          <md-card-title-text layout="column" layout-align="center center">
+            <h3 class="md-headline">{{ service.name }}</h3>
+            <span class="md-subhead">{{ service.description }}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-action layout="row" layout-align="center center">
+          <md-button ng-click="openService(service)" class="md-primary md-raised"
+                     ng-disabled="!service.user_has_service">Enter
+          </md-button>
+        </md-card-action>
+      </md-card>
+    </div>
+  </div>
+</main>
+
+<landing-footer></landing-footer>

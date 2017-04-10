@@ -1,0 +1,41 @@
+<md-card class="trends-card" layout="column" flex>
+  <div class="text-color-custom custom-border" layout="row">
+    <div>
+      <md-button class="btn-custom" ng-class="{'md-raised' : activeBackBtnFirstStep}" ng-click="breadCrumbs(1)" ng-disabled="!activeBackBtnFirstStep">Activities</md-button>
+      <md-icon class="trend-icon bread-crumbs btn-custom" md-svg-icon="arrow-right" ng-class="{'display-none-custom' : !activeBackBtnFirstStep}"></div>
+    <div>
+      <md-button class="btn-custom" ng-click="breadCrumbs(2)" ng-disabled="!backBtnSecondStep[0]" ng-class="{'display-none-custom' : !backBtnSecondStep[1], 'md-raised' : activeBackBtnThirdStep}">Components</md-button>
+      <md-icon class="trend-icon bread-crumbs btn-custom" md-svg-icon="arrow-right" ng-class="{'display-none-custom' : !backBtnSecondStep[0]}">
+    </div>
+    <md-button class="btn-custom" ng-class="{'display-none-custom' : !activeBackBtnThirdStep}" disabled>Environment</md-button>
+  </div>
+  <div layout="row" class="custom-display">
+    <div class="main-content">
+      <md-input-container class="md-block" ng-class="{'display-none-custom' : showDropdown}">
+        <md-select ng-model='showActivities' placeholder="{{activitiesValue}}">
+          <md-option ng-repeat="trendKeys in trendKeys" value='{{trendKeys}}' ng-click="changeActivities(trendKeys)">{{trendKeys}}</md-option>
+        </md-select>
+      </md-input-container>
+      <span class="main-name" ng-class="{'display-none-custom' : !showDropdown}" ng-bind-html="trendsCustomName"></span>
+      <div class="count-all"> {{trendsCustomTotal}}<span class="count-all-trend" ng-class='numberColor'> ({{trendsCustomTotalTrend}})</span>
+        <md-icon class="trend-icon" ng-class='numberColor[0]' md-svg-icon="{{numberColor[1]}}">
+      </div>
+      <div class="release-date">
+        <span class="last-release">Last Releases:</span>
+        <div class="last-releases-date" ng-bind-html="lastReleasesDate"></div>
+        <span class="previous-release">Previous Releases:</span>
+        <div class="previous-releases-date" ng-bind-html="previosReleasesDate"></div>
+      </div>
+    </div>
+    <div class="activities-content">
+      <div class="trend-element text-color-custom" ng-repeat="issueObject in issueObject">
+        <md-button class="activities-btn" ng-click="openInner(issueObject)" ng-disabled="activeBackBtnThirdStep" ng-class="{'md-raised' : !activeBackBtnThirdStep}">
+          <md-icon class="task-icon" ng-class='issueObject.iconAttr[1]' md-svg-icon="{{issueObject.iconAttr[0]}}"></md-icon><span class="text-decoration-cust">{{issueObject.name}}</span>
+          <span class="trend-number">{{issueObject.allElements}}</span>
+          <span class="trend-number" ng-class='issueObject.numberColor'> {{issueObject.trendsElements}}</span>
+          <md-icon class="trend-icon" ng-class='issueObject.numberColor[0]' md-svg-icon="{{issueObject.numberColor[1]}}">
+        </md-button>
+      </div>
+    </div>
+  </div>
+</md-card>

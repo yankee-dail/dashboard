@@ -1,0 +1,55 @@
+<form id="getInTouch" name="getInTouchForm" ng-submit="submitGetInTouch()" ng-cloak>
+  <spinner ng-if="isGetInTouchLoading"></spinner>
+  <div layout="row" flex layout-align="center center">
+    <p class="md-subheader md-warn" ng-bind-html="error"></p>
+    <p class="md-subheader success" ng-bind-html="msg"></p>
+  </div>
+  <md-input-container class="md-block" flex>
+    <label for="touchName">Name *</label>
+    <input id="touchName" required type="text" name="name" ng-model="data.name"
+           ng-pattern="/^[A-Za-z]+$/" maxlength="40"/>
+    <div ng-messages="getInTouchForm.name.$error" role="alert"
+         ng-if="getInTouchForm.$submitted || getInTouchForm.name.$touched">
+      <div ng-message-exp="'required'">Name is required</div>
+      <div ng-message-exp="'maxlength'">Name should not have more than 40 symbols</div>
+      <div ng-message-exp="'pattern'">Name should contain only letters</div>
+    </div>
+  </md-input-container>
+  <!--<md-input-container class="md-block" flex-->
+  <!--md-is-error="feedbackForm.email.$invalid && (feedbackForm.$submitted || feedbackForm.email.$dirty)">-->
+  <!--<label for="feedbackEmail">Email *</label>-->
+  <!--<input id="feedbackEmail" required type="email" name="email" ng-model="data.email"-->
+  <!--ng-pattern="/^.+@.+\..+$/" maxlength="100" minlength="10"/>-->
+  <!--<div ng-messages="feedbackForm.email.$error" role="alert"-->
+  <!--ng-if='feedbackForm.$submitted || feedbackForm.email.$touched'>-->
+  <!--<div ng-message-exp="'required'">Email is required</div>-->
+  <!--<div ng-message-exp="'minlength'">Email should have at least 10 symbols</div>-->
+  <!--<div ng-message-exp="'maxlength'">Email should not have more than 100 symbols</div>-->
+  <!--<div ng-message-exp="'pattern'">Incorrect email format</div>-->
+  <!--</div>-->
+  <!--</md-input-container>-->
+  <md-input-container class="md-block" flex>
+    <label for="touchEmail">Email *</label>
+    <input id="touchEmail" required type="email" name="email" ng-model="data.email"
+           ng-pattern="/^.+@.+\..+$/" maxlength="100"/>
+    <div ng-messages="getInTouchForm.email.$error" role="alert"
+         ng-if="getInTouchForm.$submitted || getInTouchForm.email.$touched">
+      <div ng-message-exp="'required'">Email is required</div>
+      <div ng-message-exp="'maxlength'">Email should not have more than 100 symbols</div>
+      <div ng-message-exp="'pattern'">Incorrect email format</div>
+    </div>
+  </md-input-container>
+  <md-input-container class="md-block" flex>
+    <label for="touchMessage">Message *</label>
+    <textarea required id="touchMessage" name="message" ng-model="data.message" md-maxlength="200"
+              rows="3" maxlength="200"></textarea>
+    <div ng-messages="getInTouchForm.message.$error" role="alert"
+         ng-if="getInTouchForm.$submitted || getInTouchForm.message.$touched">
+      <div ng-message-exp="'required'">Message is required</div>
+      <div ng-message-exp="'maxlength'">Message should not have more than 200 symbols</div>
+    </div>
+  </md-input-container>
+  <div layout="row" flex layout-align="center center">
+    <md-button class="md-primary md-raised" type="submit">Send</md-button>
+  </div>
+</form>

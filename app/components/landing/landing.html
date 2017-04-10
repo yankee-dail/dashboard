@@ -1,0 +1,139 @@
+<landing-header></landing-header>
+
+<div layout="column" layout-fill role="main" ng-cloak>
+  <md-content>
+    <!-- Hero section -->
+    <div class="full-screen hero-background" layout="column" layout-align="center center" layout-padding>
+      <canvas-trianglify></canvas-trianglify>
+      <md-card>
+        <md-card-title>
+          <md-card-title-text layout-align="center center">
+            <span class="md-headline">Welcome to Customer Portal</span>
+            <span class="md-subhead">Best Admin Tools</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="center center">
+          <md-button href="/sign-in" class="md-raised md-primary">Get Started Now</md-button>
+        </md-card-actions>
+      </md-card>
+    </div>
+    <!-- Services section -->
+    <md-toolbar class="service-section" layout="row" layout-padding layout-wrap layout-align="center stretch"
+                ng-if="services">
+      <md-card class="service" ng-repeat="service in services">
+        <md-card-title layout="column">
+          <md-card-title-media layout="column" layout-align="center center">
+            <div class="md-media-lg card-media">
+              <img class="md-card-image" ng-src="{{service.img_base64_path}}" alt="{{ service.name }}"/>
+            </div>
+          </md-card-title-media>
+          <md-card-title-text layout="column" layout-align="center center">
+            <span class="md-headline">{{ service.name }}</span>
+            <span class="md-subhead">{{ service.description }}</span>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
+    </md-toolbar>
+    <!-- Description section -->
+    <div class="product-description" layout="row" layout-wrap layout-padding layout-align="center center">
+      <md-card>
+        <md-card-title layout="column">
+          <md-card-title-media layout-align="center center">
+            <div class="md-media-lg card-media" layout-padding>
+              <img ng-src="images/user.svg" alt="Avatar"/>
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-content>
+          <h3 class="md-headline text-center">About our portal</h3>
+          <p class="md-body-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
+            also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+            with</p>
+        </md-card-content>
+      </md-card>
+      <md-card>
+        <md-card-title layout="column">
+          <md-card-title-media layout-align="center center">
+            <div class="md-media-lg card-media" layout-padding>
+              <img ng-src="images/user.svg" alt="Avatar"/>
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-content>
+          <h3 class="md-headline text-center">About our portal</h3>
+          <p class="md-body-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
+            also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+            with</p>
+        </md-card-content>
+      </md-card>
+    </div>
+    <!-- Get in Touch section -->
+    <md-toolbar class="get-in-touch" layout="column" layout-padding ng-controller="GetInTouchController">
+      <div layout="row" layout-align="center center">
+        <p class="header">Get In Touch</p>
+      </div>
+      <div layout="row" layout-align="center center" flex>
+        <p class="description">One of the simplest ways to contact us is to fill this form. <br>
+          Please, provide us as much detail as possible, one of us will be in touch with you shortly!</p>
+      </div>
+      <div layout="row" layout-wrap layout-align="center stretch" flex>
+        <md-card>
+          <md-card-title layout="row" layout-align="center center">
+            <md-card-title-text flex>
+              <div layout="row" layout-align="center center">
+                <span class="md-headline">Contact Us</span>
+              </div>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content flex>
+            <div layout="row" flex>
+              <div layout="column" flex="40">
+                <div layout="row" layout-padding>
+                  <md-icon md-svg-icon="map-marker" class="md-primary" alt="Location"></md-icon>
+                  Address
+                </div>
+              </div>
+              <div layout="column" class="lpad-10" flex="60" layout-padding>7-B Naukova St.,<br>Suite 1100 Lviv,<br>79060<br>Ukraine
+              </div>
+            </div>
+            <div layout="row" flex>
+              <div layout="column" flex="40">
+                <div layout="row" layout-padding>
+                  <md-icon md-svg-icon="phone-incoming"></md-icon>
+                  Phone
+                </div>
+              </div>
+              <div layout="column" class="lpad-10" flex="60"><a href="tel:+14159065226" layout-padding>+1-415-906-5226</a></div>
+            </div>
+            <div layout="row" flex>
+              <div layout="column" flex="40">
+                <div layout="row" layout-padding>
+                  <md-icon md-svg-icon="email"></md-icon>
+                  Email
+                </div>
+              </div>
+              <div layout="column" class="lpad-10" flex="60"><a href="mailto:info@romexsoft.com" layout-padding>info@romexsoft.com</a>
+              </div>
+            </div>
+          </md-card-content>
+        </md-card>
+        <md-card ng-controller="GetInTouchController">
+          <spinner ng-if="isLoading"></spinner>
+          <md-card-content>
+            <get-in-touch></get-in-touch>
+          </md-card-content>
+        </md-card>
+      </div>
+    </md-toolbar>
+    <!-- Our clients -->
+    <div class="product-description" layout="row" layout-wrap layout-padding layout-align="center center">
+      <h3 class="md-title">Our clients</h3>
+    </div>
+  </md-content>
+</div>
+
+<landing-footer></landing-footer>
